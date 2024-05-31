@@ -1,0 +1,6 @@
+@ProTine.Server_HostAddress = http://localhost:5181
+
+# GET {{ProTine.Server_HostAddress}}/weatherforecast/
+# Accept: application/json
+
+# ###
