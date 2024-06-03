@@ -24,7 +24,7 @@ namespace ProTine.Server.Controllers
         {
             WorkoutDAL workoutDAL = new WorkoutDAL();
             return Ok(workoutDAL.GetWorkouts());
-        }
+        }  
 
     }
 

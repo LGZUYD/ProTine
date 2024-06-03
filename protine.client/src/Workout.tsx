@@ -39,20 +39,20 @@ function Workout() {
             <div className="flex flex-row flex-wrap justify-evenly">
                 {workouts.map((workout: Workout) => {
                     return (
-                        <div className="rounded-md bg-sky-100 border-2 border-sky-200  m-10 w-1/3" key={workout.id} >
-                            <b>Name<br /></b>
+                        <div className="rounded-md border-2 border-sky-300 shadow-xl m-10 w-1/3" key={workout.id} >
+                            <div className="bg-sky-200 p-2 text-lg font-medium ">
                             {workout.name}
-                            <br />
+                            </div>
 
                             {workout.exercises.map((exercise: Exercise) => {
                                 return (
                                     <div>
-                                        <Exercise name={exercise.name} id={exercise.id}/>
+                                         <Exercise name={exercise.name} id={exercise.id}/>
                                     </div>
                                 )
                             })}
-
-                            <button className="bg-sky-200 border-2 border-sky-400 p-1 rounded-md hover:bg-sky-300" onClick={() => modalClick(workout.id)} >Add Exercise</button>
+                            <button className="bg-sky-200 font-semibold border-2 border-sky-400 p-1 rounded-md hover:bg-sky-300 m-1">Track Workout</button>
+                            <button className="bg-sky-200 font-semibold border-2 border-sky-400 p-1 rounded-md hover:bg-sky-300 m-1" onClick={() => modalClick(workout.id)} >Add Exercise</button>
                         </div>
                     )
                 })}

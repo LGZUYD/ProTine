@@ -33,7 +33,7 @@ function CreateExercise({ workoutId, open, onClose }: CreateExerciseProps) {
         <>
             <div className="fixed inset-0 flex justify-center items-center visible bg-black/20" >
                 <div className="relative border shadow-2xl rounded-md bg-cyan-100 w-96 h-96" onClick={(e) => e.stopPropagation}>
-                    <button className="border border-black rounded-md bg-white absolute top-2 right-2 font-semibold px-2" onClick={onClose}>X</button>
+                    <button className="border border-black rounded-md bg-white absolute top-2 right-2 font-semibold px-2 hover:bg-black/60" onClick={onClose}>X</button>
 
                     <form onSubmit={handleSubmit}>
                         <label className="m-1">

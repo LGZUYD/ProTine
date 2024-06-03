@@ -7,8 +7,8 @@ type ExerciseProps = {
 function Exercise(exercise:ExerciseProps) {
   return (
       <>
-          <div>              
-              {exercise.name}
+          <div className="border-b-2 p-1">              
+             + {exercise.name}
           </div>
       </>
   );

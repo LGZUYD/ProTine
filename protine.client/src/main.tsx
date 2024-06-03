@@ -8,6 +8,7 @@ import Routine from './Routine.tsx';
 import CreateWorkout from './Create/CreateWorkout.tsx'
 import { createBrowserRouter, RouterProvider, }
     from 'react-router-dom';
+import AllWorkoutsInRoutine from './AllWorkoutsInRoutine.tsx'
 
 
 const router = createBrowserRouter([
@@ -20,8 +21,12 @@ const router = createBrowserRouter([
                 element: <Routine />
             },
             {
+                path: "/workouts-in-routine", // dit op een of andere manier dynamisch maken uiteindelijk
+                element: <AllWorkoutsInRoutine/>
+            },
+            {
                 path: "/workout",
-                element: <Workout/>
+                element: <CreateWorkout/>
             }            
         ]
     },

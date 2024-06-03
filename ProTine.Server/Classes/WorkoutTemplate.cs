@@ -1,23 +1,22 @@
 ﻿namespace ProTine.Server.Classes
 {
-    public class Workout
-    {      
+    public class WorkoutTemplate
+    {
         public int? Id { get; set; }
         public string Name { get; set; }
-        public List<Exercise>? Exercises { get; set; }
-        public int WorkoutId { get; set; }
+        public List<ExerciseTemplate>? Exercises { get; set; }        
 
-        public Workout()
+        public WorkoutTemplate()
         {
 
         }
-        public Workout(int id, string name, List<Exercise> exercises)
+        public WorkoutTemplate(int id, string name, List<ExerciseTemplate> exercises)
         {
             Id = id;
             Name = name;
             Exercises = exercises;
         }
-        public Workout(int id, string name)
+        public WorkoutTemplate(int id, string name)
         {
             Id = id;
             Name = name;

@@ -2,12 +2,11 @@
 {
     public class Exercise
     {
-
         public int id { get; set; }
         public string Name { get; set; }
-        public int? Weight { get; set; }
-        public int Sets { get; set; }
-        public int Reps { get; set; }
+        public List<int>? Weight { get; set; }
+        public List<int> Sets { get; set; }
+        public List<int> Reps { get; set; }
         public int? WorkoutId { get; set; }
 
         public Exercise() { }
@@ -16,7 +15,7 @@
         {
             Name = name;
         }
-        public Exercise(int id, string name, int? weight, int sets, int reps)
+        public Exercise(int id, string name, List<int>? weight, List<int> sets, List<int> reps)
         {
             this.id = id;
             Name = name;
