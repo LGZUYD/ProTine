@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import CreateExercise from "./Create/CreateExercise";
-import Exercise from "./Exercise";
+import Exercise from "./ExerciseTemplate";
 
 type Exercise = {
     id: number,

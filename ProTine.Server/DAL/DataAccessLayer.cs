@@ -42,10 +42,10 @@ namespace ProTine.Server.DAL
                         }
                         else
                         {
-                            System.Diagnostics.Debug.WriteLine(" BOING!!");                            
+                            System.Diagnostics.Debug.WriteLine(" BOING!!");
                         }
 
-                        
+
                         // template.Exercises kan null zijn, als lege workout wordt aangemaakt
 
                         //List<ExerciseTemplate> exerciseTemplates = new List<ExerciseTemplate>();
@@ -72,7 +72,7 @@ namespace ProTine.Server.DAL
                 {
                     connection.Open();
 
-                    string query = "Select * from [Workout]";
+                    string query = "Select * from [WorkoutTemplate]";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -88,9 +88,41 @@ namespace ProTine.Server.DAL
                             }
                         }
                     }
-                return allWorkoutTemplates;
+                    return allWorkoutTemplates;
                 }
             }
+
+            public WorkoutTemplate GetWorkoutTemplateById(int templateId)
+            {
+                ExerciseTemplateDAL exerciseTemplateDAL = new ExerciseTemplateDAL();
+
+                using (SqlConnection connection = new SqlConnection(connString))
+                {
+                    connection.Open();
+
+                    string query = "Select * from [WorkoutTemplate] where id = @templateId;";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@templateId", templateId);
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            
+                            if (reader.Read())
+                            {
+                                int id = reader.GetInt32(0);
+                                string name = reader.GetString(1);
+                                List<ExerciseTemplate> exercises = exerciseTemplateDAL.GetExercisesByWorkoutTemplateId(id);                           
+                            
+                                return new WorkoutTemplate(id, name, exercises);
+
+                            }
+                        }
+                    }
+
+                }
+                return null;
+            }
+
         }
 
         public class WorkoutDAL()

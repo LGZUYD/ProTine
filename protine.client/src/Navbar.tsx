@@ -10,8 +10,8 @@ function Navbar() {
         <>
             <div className="bg-cyan-600 text-3xl text-center font-semibold">
                 <div className="p-10 hover:bg-cyan-500">profile</div>
-                <div onClick={() => handleClick('/routines')} className="p-10 hover:bg-cyan-500">routines</div>
-                <div onClick={() => handleClick('/workout')} className="p-10 hover:bg-cyan-500">workout</div>
+                {/*<div onClick={() => handleClick('/routines')} className="p-10 hover:bg-cyan-500">routines</div>*/}
+                <div onClick={() => handleClick('/workouts-in-routine')} className="p-10 hover:bg-cyan-500">workouts</div>
                 <div className="p-10 hover:bg-cyan-500">account</div>
                 <div className="p-10 hover:bg-cyan-500">logout </div>
             </div>

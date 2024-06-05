@@ -9,6 +9,7 @@ import CreateWorkout from './Create/CreateWorkout.tsx'
 import { createBrowserRouter, RouterProvider, }
     from 'react-router-dom';
 import AllWorkoutsInRoutine from './AllWorkoutsInRoutine.tsx'
+import TrackWorkout from './TrackWorkout.tsx'
 
 
 const router = createBrowserRouter([
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
             {
                 path: "/workouts-in-routine", // dit op een of andere manier dynamisch maken uiteindelijk
                 element: <AllWorkoutsInRoutine/>
+            },
+            {
+                path: "/track-workout/:templateId",
+                element:<TrackWorkout/>
             },
             {
                 path: "/workout",

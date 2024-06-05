@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using ProTine.Server.Classes;
 using static ProTine.Server.DAL.DataAccessLayer;
 
 namespace ProTine.Server.Controllers
 {
-    public class WorkoutTemplateController : Controller
+    [ApiController]
+    public class WorkoutTemplateController : ControllerBase
     {
 
         [HttpPost]
@@ -31,7 +33,7 @@ namespace ProTine.Server.Controllers
 
             System.Diagnostics.Debug.WriteLine($"Template Name: {template.Name}");
             System.Diagnostics.Debug.WriteLine($"Template Exercises: {string.Join(", ", template.Exercises.Select(e => e.Name))}");
-            
+
             WorkoutTemplateDAL templateDAL = new WorkoutTemplateDAL();
             templateDAL.CreateWorkoutTemplate(template);
             return Ok();
@@ -43,7 +45,17 @@ namespace ProTine.Server.Controllers
         {
             WorkoutTemplateDAL templateDAL = new WorkoutTemplateDAL();
             return Ok(templateDAL.GetWorkoutTemplates());
-            
+
         }
+
+        [HttpGet]
+        [Route("/workout/track-workout/{templateId}")]
+        public IActionResult GetTemplateById(int templateId)
+        {
+            WorkoutTemplateDAL templateDAL = new WorkoutTemplateDAL();
+            return Ok(templateDAL.GetWorkoutTemplateById(templateId));            
+
+        }
+
     }
 }
