@@ -5,7 +5,7 @@
         public int? Id { get; set; }
         public string Name { get; set; }
         public List<Exercise>? Exercises { get; set; }
-        public int WorkoutId { get; set; }
+        public int templateId { get; set; }
 
         public Workout()
         {
